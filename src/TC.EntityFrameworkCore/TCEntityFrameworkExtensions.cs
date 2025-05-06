@@ -1,13 +1,10 @@
-using System;
 using System.Data.Common;
 using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace TC.EntityFrameworkCore;
@@ -49,10 +46,13 @@ public static class TCEntityFrameworkExtensions
     }
 
 
-    public static DbContextOptionsBuilder AddTrace(this DbContextOptionsBuilder builder, int slowThresholdMs = 500)
+    public static DbContextOptionsBuilder AddTrace(this DbContextOptionsBuilder builder, Action<string>? logger = null, int slowThresholdMs = 500)
     {
         if (builder == null) throw new ArgumentNullException(nameof(builder));
-        builder.AddInterceptors(new SqlTraceInterceptor(Options.Logger, slowThresholdMs));
+
+        logger ??= Options.Logger;
+
+        builder.AddInterceptors(new SqlTraceInterceptor(logger, slowThresholdMs));
         return builder;
     }
 
