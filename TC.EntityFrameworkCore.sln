@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EACD1801-AC4F-40B3-B71F-0A2634719079}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{DCC70508-5898-4516-903D-1A2C848374AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TC.EntityFrameworkCore", "src\TC.EntityFrameworkCore\TC.EntityFrameworkCore.csproj", "{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68C452C8-E2DD-4017-90CE-D38D7DE6C2F2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+EndGlobal
