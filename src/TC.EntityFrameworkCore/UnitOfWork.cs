@@ -35,6 +35,9 @@ public interface IUnitOfWork<TDbContext> where TDbContext : DbContext
     Task<IDisposable> BeginTransactionAsync(CancellationToken cancellationToken = default);
     Task CommitTransactionAsync(CancellationToken cancellationToken = default);
     Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
+    Task ExecuteInTransactionAsync(Func<Task> operation, CancellationToken cancellationToken = default);
+    UnitOfWork<TDbContext>.AutoTransactionScope CreateLocalTransactionScope();
+    UnitOfWork<TDbContext>.NestedTransactionScope CreateTransactionScope(TransactionScopeOption scopeOption = TransactionScopeOption.Required, TransactionOptions? transactionOptions = null);
 
     // 钩子扩展点
     event Func<object, Task>? OnBeforeSaveChanges;
